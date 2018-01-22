@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController
 {
     @IBOutlet weak var messageLabel: UILabel!
+     var index = 0
     
     //Below executes when you first load the view
     override func viewDidLoad()
@@ -18,12 +19,22 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("The View Loaded!")
+        
     }
     @IBAction func showMesagePressed(_ sender: UIButton)
     {
-       
-    let pi = 3.14
-    let message1 = "You are Awesome!!!!"
+        let messages = ["You are Awesome!!","You are Great!", "You are Incredible"]
+        messageLabel.text = messages[index]
+        index = index+1
+        if index == messages.count
+        {
+            index = 0
+        }
+        
+        }
+    // code from earlier
+  /*  let pi = 3.14
+    let messages = "You are Awesome!!"
     let message2 = "You are Great!"
     let message3 =  "You are Incredible"
         if messageLabel.text == message1
@@ -39,8 +50,8 @@ class ViewController: UIViewController
         else
         {
             messageLabel.text = message1
-        }
+        }*/
             
         }
-    }
+
 
