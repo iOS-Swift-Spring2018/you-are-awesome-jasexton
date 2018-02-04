@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,52 +20,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqb-HS-0B6">
-                                <rect key="frame" x="147" y="80" width="104" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8dA-yS-mDi"/>
-                                </constraints>
+                                <rect key="frame" x="246" y="100" width="104" height="30"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="showButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZAa-PN-dvD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-Cm-pBS">
-                                <rect key="frame" x="103" y="21" width="162" height="52"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="twX-L2-eSd">
+                                <rect key="frame" x="23" y="143" width="327" height="441"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEc-D7-nbm">
+                                <rect key="frame" x="127" y="100" width="49" height="31"/>
+                                <connections>
+                                    <action selector="soundSwitchedPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="AOQ-eR-3iY"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSz-nC-Ndu">
+                                <rect key="frame" x="23" y="105" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-Cm-pBS">
+                                <rect key="frame" x="85" y="19" width="205" height="73"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="80B-7u-6gc"/>
+                                    <constraint firstAttribute="height" constant="73" id="rCZ-KC-02h"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="You are Awesome!">
                                         <attributes>
                                             <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="29" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="twX-L2-eSd">
-                                <rect key="frame" x="8" y="146" width="328" height="502"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95227549901697972" green="1" blue="0.99446424714749426" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Fmq-Cm-pBS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="J20-Ss-csr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="twX-L2-eSd" secondAttribute="bottom" constant="50" id="THO-9J-VO9"/>
-                            <constraint firstItem="Eqb-HS-0B6" firstAttribute="top" secondItem="Fmq-Cm-pBS" secondAttribute="bottom" constant="8" symbolic="YES" id="bZx-Vy-AbO"/>
-                            <constraint firstItem="Eqb-HS-0B6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="eIX-Ze-ku4"/>
-                            <constraint firstItem="Fmq-Cm-pBS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="fyK-D4-UfA"/>
-                            <constraint firstItem="Eqb-HS-0B6" firstAttribute="centerX" secondItem="Fmq-Cm-pBS" secondAttribute="centerX" id="hsg-yM-MUf"/>
-                            <constraint firstItem="twX-L2-eSd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="nbT-nd-aKm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="twX-L2-eSd" secondAttribute="trailing" constant="27" id="pbg-4J-hSc"/>
-                            <constraint firstItem="twX-L2-eSd" firstAttribute="top" secondItem="Eqb-HS-0B6" secondAttribute="bottom" constant="35" id="pvq-1Y-i6m"/>
+                            <constraint firstItem="TSz-nC-Ndu" firstAttribute="leading" secondItem="twX-L2-eSd" secondAttribute="leading" id="1Cz-nh-Z5X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="twX-L2-eSd" secondAttribute="bottom" constant="83" id="8sb-WU-RSu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eqb-HS-0B6" secondAttribute="trailing" constant="25" id="B3c-MC-xPd"/>
+                            <constraint firstItem="eEc-D7-nbm" firstAttribute="leading" secondItem="TSz-nC-Ndu" secondAttribute="trailing" constant="18" id="E1S-1J-GKR"/>
+                            <constraint firstItem="eEc-D7-nbm" firstAttribute="centerY" secondItem="Eqb-HS-0B6" secondAttribute="centerY" id="HsO-52-cQL"/>
+                            <constraint firstItem="eEc-D7-nbm" firstAttribute="top" secondItem="Eqb-HS-0B6" secondAttribute="top" id="OCl-Bz-hhV"/>
+                            <constraint firstItem="Fmq-Cm-pBS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="RvG-WT-iCJ"/>
+                            <constraint firstItem="TSz-nC-Ndu" firstAttribute="centerY" secondItem="eEc-D7-nbm" secondAttribute="centerY" id="Zhj-Jg-rJI"/>
+                            <constraint firstItem="Fmq-Cm-pBS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-1" id="b2a-XK-5fo"/>
+                            <constraint firstItem="eEc-D7-nbm" firstAttribute="top" secondItem="Fmq-Cm-pBS" secondAttribute="bottom" constant="8" symbolic="YES" id="chf-Sh-SoN"/>
+                            <constraint firstItem="Fmq-Cm-pBS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fVR-y4-iUR"/>
+                            <constraint firstItem="twX-L2-eSd" firstAttribute="top" secondItem="eEc-D7-nbm" secondAttribute="bottom" constant="12" id="l69-xd-Gxk"/>
+                            <constraint firstItem="Eqb-HS-0B6" firstAttribute="trailing" secondItem="twX-L2-eSd" secondAttribute="trailing" id="sg2-aU-bmN"/>
+                            <constraint firstItem="TSz-nC-Ndu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="yKl-Ah-p2u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="awesomeImage" destination="twX-L2-eSd" id="a7q-nG-mXA"/>
                         <outlet property="messageLabel" destination="Fmq-Cm-pBS" id="aTN-wy-H0R"/>
+                        <outlet property="soundSwitch" destination="eEc-D7-nbm" id="G0U-vW-i35"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
